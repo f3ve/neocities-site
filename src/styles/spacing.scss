@@ -1,0 +1,37 @@
+@use './variables.scss' as vars;
+
+@each $label, $spacer in vars.$spacers {
+  .gap-#{$label} {
+    gap: $spacer;
+  }
+
+  $directions: (
+    t: 'top',
+    r: 'right',
+    b: 'bottom',
+    l: 'left'
+  );
+
+  @each $d-label, $d-value in $directions {
+    .p#{$d-label}-#{$label} {
+      padding-#{$d-value}: $spacer
+    }
+  }
+
+  // Padding on the left and right sides of an element
+  .px-#{$label} {
+    padding-left: $spacer;
+    padding-right: $spacer;
+  }
+
+  // Padding on the top and bottom sides of an element
+  .py-#{$label} {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
+
+  // Padding on all sides of an element
+  .pa-#{$label} {
+    @extend .px-#{$label}, .py-#{$label}
+  }
+}

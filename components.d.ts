@@ -7,6 +7,13 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CBtn: typeof import('./src/core/components/CBtn.vue')['default']
+    CContainer: typeof import('./src/core/components/CContainer.vue')['default']
+    CHeader: typeof import('./src/core/components/CHeader.vue')['default']
+    CoreCore: typeof import('./src/core/components/CoreCore.vue')['default']
+    CoreLink: typeof import('./src/core/components/CoreLink.vue')['default']
+    DefaultHeader: typeof import('./src/layouts/components/default/DefaultHeader.vue')['default']
+    NavLinks: typeof import('./src/layouts/components/NavLinks.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
