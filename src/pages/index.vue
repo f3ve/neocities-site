@@ -3,5 +3,9 @@ name: home
 </route>
 
 <template>
-  <p>This is the page!</p>
+  <c-container
+    class="bg-surface-lighten-1 flex-col justify-center align-center"
+  >
+    Page body
+  </c-container>
 </template>

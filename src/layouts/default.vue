@@ -1,8 +1,11 @@
 <template>
   <c-container>
     <default-header />
-    <main>
-      <router-view />
-    </main>
+    <div class="flex-row fluid">
+      <default-drawer />
+      <main>
+        <router-view />
+      </main>
+    </div>
   </c-container>
 </template>

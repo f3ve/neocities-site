@@ -1,6 +1,8 @@
 <template>
-  <c-header class="flex-row align-center justify-between">
-    <h1>This is the default Layout!</h1>
-    <nav-links />
+  <c-header
+    class="flex-row align-center justify-center bg-surface"
+    style="height: 60px"
+  >
+    <p>header</p>
   </c-header>
 </template>

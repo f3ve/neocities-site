@@ -1,0 +1,7 @@
+@use './variables.scss' as vars;
+
+@each $color, $value in vars.$colors {
+  .bg-#{$color} {
+    background: $value
+  }
+}

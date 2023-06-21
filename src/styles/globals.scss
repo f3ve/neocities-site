@@ -1,3 +1,22 @@
 @use './cssReset.scss';
 @use './flexHelpers.scss';
-@use './spacing.scss'
+@use './spacing.scss';
+@use './colors.scss';
+
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.fluid {
+  @extend .full-height, .full-width;
+}
