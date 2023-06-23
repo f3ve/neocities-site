@@ -5,6 +5,8 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import Pages from 'vite-plugin-pages';
 import Layouts from 'vite-plugin-vue-layouts';
+import Markdown from 'vite-plugin-vue-markdown';
+import prism from 'markdown-it-prism';
 
 import 'vite-ssg';
 
@@ -29,7 +31,10 @@ export default defineConfig({
   },
 
   plugins: [
-    vue(),
+    vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
+
     AutoImport({
       imports: [
         'vue',
@@ -54,6 +59,8 @@ export default defineConfig({
     }),
 
     Components({
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dirs: [
         'src/core/components',
         'src/layouts/**/components/**',
@@ -63,12 +70,27 @@ export default defineConfig({
 
     Pages({
       exclude: ['**/components/**'],
-      extensions: ['vue'],
+      extensions: ['vue', 'md'],
     }),
 
     Layouts({
       exclude: ['**/components/**'],
       layoutsDirs: ['src/layouts'],
+    }),
+
+    Markdown({
+      headEnabled: true,
+      markdownItOptions: {
+        html: true,
+        linkify: true,
+        typographer: true,
+        xhtmlOut: false,
+        quotes: '“”‘’',
+        breaks: false,
+      },
+      markdownItSetup(md) {
+        md.use(prism);
+      },
     }),
   ],
 });
