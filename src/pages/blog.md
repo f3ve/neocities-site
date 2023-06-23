@@ -3,9 +3,11 @@ title: this is a title
 description: this is a description
 ---
 
-# This is a page yay!
+# {{frontmatter.title}}
 
 [This is a link!](/)
+
+# Welcome to my website!
 
 ```javascript
 const muffins = 'muggins';
