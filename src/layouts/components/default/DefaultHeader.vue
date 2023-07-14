@@ -1,8 +1,11 @@
 <template>
   <c-header
-    class="flex-row align-center justify-center bg-surface"
-    style="height: 60px"
+    class="flex-col align-center justify-center bg-surface"
+    style="height: 90px"
   >
-    <p>header</p>
+    <h1>
+      <c-btn :to="{ name: 'home' }" text="SpacyDude" />
+    </h1>
+    <nav-links />
   </c-header>
 </template>

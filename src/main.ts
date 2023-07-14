@@ -2,7 +2,7 @@ import '@/styles/globals.scss';
 
 import App from '@/App.vue';
 import { ViteSSG } from 'vite-ssg';
-import { createHead } from '@unhead/vue';
+// import { createHead } from '@unhead/vue';
 import { setupLayouts } from 'virtual:generated-layouts';
 import generatedLayouts from 'virtual:generated-pages';
 
@@ -25,8 +25,8 @@ export const createApp = ViteSSG(
     routes,
   },
   ({ app }) => {
-    const head = createHead();
+    // const head = createHead();
     app.use(createPinia());
-    app.use(head);
+    // app.use(head);
   }
 );

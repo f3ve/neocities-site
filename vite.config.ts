@@ -79,7 +79,13 @@ export default defineConfig({
     }),
 
     Markdown({
-      headEnabled: true,
+      headEnabled: 'vueuse',
+      wrapperClasses: [
+        'bg-surface-lighten-1',
+        'fluid',
+        'markdown-body',
+        'pa-2',
+      ],
       markdownItOptions: {
         html: true,
         linkify: true,
@@ -88,6 +94,7 @@ export default defineConfig({
         quotes: '“”‘’',
         breaks: false,
       },
+
       markdownItSetup(md) {
         md.use(prism);
       },
